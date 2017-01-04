@@ -16,45 +16,48 @@
      id: 104
  }]
 
- function titleCaseName(str) {
-    for (var i = 0; i < str.length; i++) {
-      str[i].fullName = `${str[i].firstName} ${str[i].lastName}`
-    }
-   return str
- }
+//  function titleCaseName(str) {
+//     for (var i = 0; i < str.length; i++) {
+//       str[i].fullName = `${str[i].firstName} ${str[i].lastName}`
+//     }
+//    return str
+// }
 
  // Our object with the chainable methods using class in ES6
  class UserController {
    constructor(){
-      this.usersData = usersData
+      this.users = "users"
    }
    titleCaseName(str) {
 
-   }
-   findUser(str){
+   };
+   findUser (str){
       for (var i = 0; i < str.length; i++) {
          if (usersData[i].email == str){
-            return this.usersData[i]
+            this.users = usersData[i]
+            break;
          }
       }
-      return `${str} is not found`
-   }
-   formatName(){
-      this.fullName = `${this.firstName} ${this.lastName}`
       return this
-   }
+   };
+   formatName (){
+      this.users.fullName = `${this.users.firstName} ${this.users.lastName}`
+      return this
+   };
    formatData(){
+      this.users.format = `Member name: ${this.users.fullName} \nID: ${this.users.id} \nE-mail: ${this.users.email}`
       return this
-   }
+   };
    displayUser(){
-      return console.log(str)
+      return this.users.format
    }
  }
 
  // Driver code
  let userController = new UserController;
  // console.log(titleCaseName(usersData));
- console.log(userController.findUser("awesomesquidward@yahoo.com").formatName())
+ console.log(userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser())
+ // console.log(userController.formatName());
  //.formatData().displayUser());
 
  // result
