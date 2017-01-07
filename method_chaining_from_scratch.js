@@ -54,7 +54,7 @@
 
     displayUser(){
 
-      return `Member name : ${this.result["firstName"]} ${this.result["lastName"]}`;
+      console.log(` Member name : ${this.result[0]['firstName']} ${this.result[0]['lastName']} \n ID : ${this.result[0]['id']} \n ${this.result[0]['email']}`);
     }
 
 
@@ -62,7 +62,7 @@
 
  // Driver code
  let userController = new UserController;
- console.log(userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser());
+ userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser();
  // userController.findUser("awesomesquidward@yahoo.com").formatName();
 
  // result
