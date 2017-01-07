@@ -14,24 +14,56 @@
      lastName: "Tentacles",
      email: "awesomesquidward@yahoo.com",
      id: 104
- }]
+ }];
 
- function titleCaseName(str) {
-
- }
 
  // Our object with the chainable methods using class in ES6
  class UserController {
-  
-   titleCaseName(str) {
-    
-    
-   }
+
+    constructor(){
+        this.data = usersData;
+        this.key = "";
+        this.result = []
+    }
+
+    findUser(string){
+
+      this.string = string;
+
+      return this;
+    }
+
+    formatName(){
+
+          for(let i = 0; i < this.data.length;i++){
+
+                    if(this.string == this.data[i]["email"])
+                    {
+                    this.key = i;
+                    return this;
+                    }
+
+          }
+    }
+
+    formatData(){
+
+        this.result.push(this.data[this.key]);
+        return this
+    }
+
+    displayUser(){
+
+      return `Member name : ${this.result["firstName"]} ${this.result["lastName"]}`;
+    }
+
+
  }
 
  // Driver code
  let userController = new UserController;
- userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser();
+ console.log(userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser());
+ // userController.findUser("awesomesquidward@yahoo.com").formatName();
 
  // result
  // Member name: Squidward Tentacles
