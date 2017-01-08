@@ -6,4 +6,4 @@ function shout_backwards(data){
   return backwards + "!!!";
 }
 
-console.log(shout_backwards("Hello World"));
+console.log(shout_backwards("Hello World").toUpperCase().split().reverse().join());
