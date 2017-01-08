@@ -48,6 +48,8 @@
      return this
    }
    formatData(){
+     this._result = `Member Name: ${this._firsName} ${this._lastName} ID: ${this._id} Email: ${this._email}`
+     return this
    }
    displayUser(){
    }
@@ -55,7 +57,8 @@
 
  // Driver code
  let userController = new UserController;
- console.log(userController.formatName());
+ console.log(userController.formatData());
+ // console.log(userController.formatName());
  // console.log(userController.findUser("awesomesquidward@yahoo.com"))
  // .formatName().formatData().displayUser())
 
