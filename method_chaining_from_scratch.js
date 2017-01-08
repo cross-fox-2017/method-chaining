@@ -44,6 +44,8 @@
      return this
    }
    formatName(){
+     this._result = `${this._firsName} ${this._lastName}`
+     return this
    }
    formatData(){
    }
@@ -53,7 +55,8 @@
 
  // Driver code
  let userController = new UserController;
- console.log(userController.findUser("awesomesquidward@yahoo.com")
+ console.log(userController.formatName());
+ // console.log(userController.findUser("awesomesquidward@yahoo.com"))
  // .formatName().formatData().displayUser())
 
  // result
