@@ -22,10 +22,10 @@
 
  // Our object with the chainable methods using class in ES6
  class UserController {
-  
+
    titleCaseName(str) {
-    
-    
+
+
    }
  }
 
