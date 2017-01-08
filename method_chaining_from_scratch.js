@@ -52,15 +52,15 @@
      return this
    }
    displayUser(){
+     return this._result
    }
  }
 
  // Driver code
  let userController = new UserController;
- console.log(userController.formatData());
+ // console.log(userController.formatData());
  // console.log(userController.formatName());
- // console.log(userController.findUser("awesomesquidward@yahoo.com"))
- // .formatName().formatData().displayUser())
+ console.log(userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser())
 
  // result
  // Member name: Squidward Tentacles
