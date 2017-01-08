@@ -16,17 +16,36 @@
      id: 104
  }]
 
- function titleCaseName(str) {
-
- }
-
  // Our object with the chainable methods using class in ES6
  class UserController {
-
-   titleCaseName(str) {
-
-
-   }
+  constructor(){
+    this.first = '';
+    this.last = '';
+    this.id = 0;
+    this.email = '';
+  }
+  findUser(email){
+    for (var i = 0; i < usersData.length; i++) {
+      if (usersData[i].email === email) {
+        this.first = usersData[i].firstName
+        this.last = usersData[i].lastName
+        this.email = usersData[i].email
+        this.id = usersData[i].id
+      }
+    }
+    return this
+  }
+  formatName(){
+    this.fullName = `${this.first} ${this.last}`;
+    return this
+  }
+  formatData(){
+    this.data = `Member name: ${this.fullName} \nID: ${this.id} \nEmail: ${this.email}`;
+   return this;
+  }
+  displayUser(){
+    return console.log(this.data);
+  }
  }
 
  // Driver code
