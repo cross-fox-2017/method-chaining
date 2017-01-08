@@ -22,16 +22,39 @@
 
  // Our object with the chainable methods using class in ES6
  class UserController {
-  
+   constructor(){
+     this._firsName = ''
+     this._lastName = ''
+     this._id = 0
+     this._email = ''
+     this._result = ''
+   }
    titleCaseName(str) {
-    
-    
+
+   }
+   findUser(email){
+     for (var i = 0; i < usersData.length; i++) {
+       if (usersData[i].email === email) {
+         this._firsName = usersData[i].firstName
+         this._lastName = usersData[i].lastName
+         this._email = usersData[i].email
+         this._id = usersData[i].id
+       }
+     }
+     return this
+   }
+   formatName(){
+   }
+   formatData(){
+   }
+   displayUser(){
    }
  }
 
  // Driver code
  let userController = new UserController;
- userController.findUser("awesomesquidward@yahoo.com").formatName().formatData().displayUser();
+ console.log(userController.findUser("awesomesquidward@yahoo.com")
+ // .formatName().formatData().displayUser())
 
  // result
  // Member name: Squidward Tentacles
