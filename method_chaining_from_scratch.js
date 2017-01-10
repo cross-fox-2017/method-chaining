@@ -22,10 +22,20 @@
 
  // Our object with the chainable methods using class in ES6
  class UserController {
-  
-   titleCaseName(str) {
-    
-    
+
+   constructor() {
+     this.input   = userData;
+     this.Temp    = "";
+     this.reulst  = [];
+   }
+
+   formatName(){
+     for (let i = 0; i < this.input.length; i++) {
+       if(this.string == this.input[i]){
+
+       }
+
+     }
    }
  }
 
