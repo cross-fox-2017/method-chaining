@@ -6,4 +6,10 @@ function shout_backwards(data){
   return backwards + "!!!";
 }
 
+function methodChaining(word) {
+  return word.toUpperCase().split('').reverse().join('');
+
+}
+
 console.log(shout_backwards("Hello World"));
+console.log(methodChaining('Hello World'))
